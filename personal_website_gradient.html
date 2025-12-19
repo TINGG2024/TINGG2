@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我 - 李宇婷</title>
+    <style>
+        /* 定义CSS变量 - 增强对比度版本 */
+        :root {
+            --primary-color: #4d9a68; /* 更深的绿色主色调 */
+            --primary-light: #6bb988; /* 亮一点的绿色 */
+            --primary-dark: #2c6e44; /* 深绿色 */
+            --text-color: #2a3a31; /* 深灰色文字 */
+            --text-color-light: #4a5a51; /* 中等灰色文字 */
+            --accent-color: #3a6e52; /* 强调色 */
+            --background-color: #ffffff; /* 纯白色背景 */
+            --section-bg: #f5f9f7; /* 区块背景 */
+            --border-color: #e0f2e5; /* 边框颜色 */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            position: relative;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        /* 顶部导航/标题区域 */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--background-color);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+        }
+
+        .header-title h1 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: var(--text-color);
+        }
+
+        .header-title p {
+            font-size: 14px;
+            color: var(--text-color-light);
+        }
+
+        .header-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        /* 英雄区域 */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            background-color: var(--section-bg);
+        }
+
+        /* 头像样式 */
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid var(--background-color);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+            z-index: 10;
+            transition: transform 0.3s ease;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .avatar:hover {
+            transform: scale(1.05);
+        }
+
+        .avatar::after {
+            display: none;
+        }
+
+        .avatar::after {
+            content: 'LT';
+            font-weight: bold;
+            letter-spacing: 2px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* 确保文字始终可见 */
+            z-index: 11;
+        }
+
+        .quote {
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+            color: var(--text-color-light);
+        }
+
+        .name-large {
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 32px;
+            color: var(--primary-dark);
+        }
+
+        .basic-info-text {
+            font-size: 16px;
+            margin-bottom: 24px;
+            color: var(--text-color-light);
+            font-weight: 400;
+        }
+
+        .contact-btn {
+            padding: 12px 36px;
+            border: 2px solid var(--primary-color);
+            background-color: transparent;
+            color: var(--primary-color);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .contact-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+            box-shadow: 0 4px 8px rgba(77, 154, 104, 0.3);
+        }
+
+        /* 内容区域 */
+        .content-section {
+            padding: 100px 40px;
+            border-bottom: 1px solid var(--border-color);
+            background-color: var(--background-color);
+        }
+
+        .section-header {
+            margin-bottom: 60px;
+            background-color: var(--section-bg);
+            padding: 24px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--primary-dark);
+        }
+
+        .section-subtitle {
+            font-size: 14px;
+            color: var(--text-color-light);
+            font-weight: 400;
+        }
+
+        /* 个人信息 */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+        }
+
+        .basic-info h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: var(--primary-color);
+        }
+
+        .basic-info p {
+            font-size: 16px;
+            margin-bottom: 16px;
+            line-height: 1.8;
+            color: var(--text-color);
+            font-weight: 400;
+        }
+
+        .about-bio p {
+            font-size: 16px;
+            margin-bottom: 24px;
+            line-height: 2;
+            color: var(--text-color);
+            font-weight: 400;
+        }
+
+        /* 时间轴样式 */
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--primary-light);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 60px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -45px;
+            top: 8px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            border: 2px solid white;
+            box-shadow: 0 0 0 2px var(--primary-light);
+        }
+
+        .timeline-date {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--primary-color);
+        }
+
+        .timeline-company {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 16px;
+            color: var(--text-color);
+        }
+
+        .timeline-description {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--text-color);
+            font-weight: 400;
+        }
+
+        /* 兴趣爱好 */
+        .hobbies-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .hobby-item {
+            background-color: var(--background-color);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .hobby-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(77, 154, 104, 0.2);
+            border-color: var(--primary-light);
+        }
+
+        .hobby-image {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(77, 154, 104, 0.1), rgba(107, 185, 136, 0.1));
+        }
+
+        .hobby-icon {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+        }
+
+        .hobby-content {
+            padding: 25px;
+        }
+
+        .hobby-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+
+        .hobby-description {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            color: var(--text-color);
+            font-weight: 400;
+        }
+
+        .hobby-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .hobby-tag {
+            background-color: rgba(77, 154, 104, 0.15);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            font-weight: 500;
+            border: 1px solid rgba(77, 154, 104, 0.2);
+        }
+
+        .hobby-details {
+            display: inline-block;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            font-size: 14px;
+        }
+
+        .hobby-details:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+         
+         /* 技能证书图表 */
+         .skills-container {
+             margin-top: 40px;
+         }
+         
+         .skill-chart {
+             margin-bottom: 60px;
+         }
+         
+         .chart-title {
+             font-size: 18px;
+             font-weight: 500;
+             margin-bottom: 32px;
+             text-align: center;
+         }
+         
+         .chart-bar {
+             display: flex;
+             align-items: center;
+             margin-bottom: 20px;
+         }
+         
+         .chart-label {
+             width: 80px;
+             font-size: 14px;
+             margin-right: 24px;
+         }
+         
+         .chart-progress {
+             flex: 1;
+             height: 40px;
+             background-color: #f0f0f0;
+             position: relative;
+         }
+         
+         .chart-fill {
+             position: absolute;
+             top: 0;
+             left: 0;
+             height: 100%;
+             background-color: #000;
+         }
+         
+         .chart-percentage {
+             position: absolute;
+             top: 50%;
+             right: 16px;
+             transform: translateY(-50%);
+             color: #fff;
+             font-size: 14px;
+             font-weight: 500;
+         }
+         
+         /* 联系方式 */
+         .contact-list {
+             display: grid;
+             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+             gap: 32px;
+         }
+         
+         .contact-item {
+             display: flex;
+             align-items: center;
+             font-size: 16px;
+         }
+         
+         .contact-icon {
+             width: 24px;
+             height: 24px;
+             margin-right: 16px;
+         }
+         
+         /* 滚动进度指示器 */
+         .scroll-progress {
+             position: fixed;
+             top: 0;
+             left: 0;
+             height: 2px;
+             background-color: #000;
+             z-index: 1001;
+             width: 0%;
+         }
+         
+         /* 响应式设计 */
+         @media (max-width: 768px) {
+             .header {
+                 padding: 16px 24px;
+             }
+             
+             .content-section {
+                 padding: 80px 24px;
+             }
+             
+             .about-content {
+                 grid-template-columns: 1fr;
+                 gap: 40px;
+             }
+             
+             .name-large {
+                 font-size: 28px;
+             }
+         }
+     </style>
+ </head>
+ <body>
+     <!-- 滚动进度指示器 -->
+     <div class="scroll-progress" id="scrollProgress"></div>
+     
+     <!-- 顶部导航 -->
+     <header class="header">
+         <div class="header-title">
+             <h1>李宇婷</h1>
+             <p>湖北 / 武汉</p>
+         </div>
+         <div class="header-icon">
+             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                 <path d="M12 5v14M5 12h14"></path>
+             </svg>
+         </div>
+     </header>
+     
+     <!-- 英雄区域 -->
+     <section class="hero">
+         <div class="avatar">
+             <img src="images/avatar.jpg" alt="头像">
+         </div>
+         <h2 class="name-large">李宇婷</h2>
+         <p class="basic-info-text">女 · 本科 · 安徽合肥</p>
+         <p class="quote">"BEAUTY WITHOUT PASSION IS UNATTRACTIVE"</p>
+         <button class="contact-btn" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">&#9993; 联系我</button>
+     </section>
+     
+     <!-- 关于我 -->
+     <section class="content-section" id="about">
+         <div class="section-header">
+             <h2 class="section-title">ABOUT ME</h2>
+             <p class="section-subtitle">关于我</p>
+         </div>
+         
+         <div class="about-content">
+             <div class="basic-info">
+                 <h3>个人信息</h3>
+                 <p>姓名：李宇婷</p>
+                 <p>性别：女</p>
+                 <p>学历：本科</p>
+                 <p>籍贯：安徽合肥</p>
+             </div>
+             
+             <div class="about-bio">
+                 <p>我是一名专注的终身学习者，目前在武汉理工大学学习经济专业。我对经济学有着浓厚的兴趣，致力于成为一名优秀的经济学实践者。</p>
+                 <p>除了学术追求外，我还有多样化的兴趣爱好，包括养猫、音乐欣赏、动漫、跑步、摄影、理财以及手工编织等。这些爱好丰富了我的生活，也培养了我的创造力和团队协作能力。</p>
+                 <p>我相信知识的变革力量，致力于在个人和职业生涯中不断成长和学习。</p>
+             </div>
+         </div>
+     </section>
+     
+     <!-- 教育经历 -->
+     <section class="content-section">
+         <div class="section-header">
+             <h2 class="section-title">EDUCATION</h2>
+             <p class="section-subtitle">教育经历</p>
+         </div>
+         
+         <div class="timeline">
+             <div class="timeline-item">
+                 <div class="timeline-date">2024.9 - 至今</div>
+                 <div class="timeline-company">武汉理工大学</div>
+                 <div class="timeline-description">攻读经济学士学位。积极参与各种社团活动和学术讲座，提升专业能力和综合素质。</div>
+             </div>
+             
+             <div class="timeline-item">
+                 <div class="timeline-date">2021.9 - 2024.6</div>
+                 <div class="timeline-company">合肥第十中学</div>
+                 <div class="timeline-description">完成高中文科实验班学业。取得优异的学习成绩。</div>
+             </div>
+             
+             <div class="timeline-item">
+                 <div class="timeline-date">2018.9 - 2021.6</div>
+                 <div class="timeline-company">第四十六中学南校区</div>
+                 <div class="timeline-description">初中期间获得"三好学生"称号。发展了多样化的兴趣爱好，积极参与文体活动，并担任班干部，培养了良好的组织能力和团队精神。</div>
+             </div>
+             
+             <div class="timeline-item">
+                 <div class="timeline-date">2016.9 - 2018.6</div>
+                 <div class="timeline-company">师范附小四小</div>
+                 <div class="timeline-description">小学高年级阶段，学习成绩优秀。</div>
+             </div>
+             <div class="timeline-item">
+                 <div class="timeline-date">2012.9 - 2016.6</div>
+                 <div class="timeline-company">阿奎利亚小学</div>
+                 <div class="timeline-description">小学低年级阶段，打下坚实基础。</div>
+             </div>
+         </div>
+     </section>
+     
+     <!-- 兴趣爱好 -->
+     <section class="content-section">
+         <div class="section-header">
+             <h2 class="section-title">HOBBIES</h2>
+             <p class="section-subtitle">兴趣爱好</p>
+         </div>
+         
+         <div class="hobbies-container">
+             <div class="hobby-item">
+                 <div class="hobby-image">
+                     <img src="images/cat.jpg" alt="养猫" class="hobby-icon">
+                 </div>
+                 <div class="hobby-content">
+                     <h3 class="hobby-title">养猫</h3>
+                     <p class="hobby-description">我喜欢与猫咪相处，养猫不仅给我带来了快乐和陪伴，也培养了我的责任感和耐心。</p>
+                     <div class="hobby-tags">
+                         <span class="hobby-tag">宠物护理</span>
+                         <span class="hobby-tag">猫咪训练</span>
+                     </div>
+                     <a href="javascript:void(0)" class="hobby-details" onclick="openEditPage('养猫')">查看详情 →</a>
+                 </div>
+             </div>
+             <div class="hobby-item">
+                 <div class="hobby-image">
+                     <img src="images/music.jpg" alt="音乐" class="hobby-icon">
+                 </div>
+                 <div class="hobby-content">
+                     <h3 class="hobby-title">音乐</h3>
+                     <p class="hobby-description">音乐是我生活中不可或缺的一部分，我喜欢欣赏各种类型的音乐，从中获取灵感和放松心情。</p>
+                     <div class="hobby-tags">
+                         <span class="hobby-tag">流行音乐</span>
+                         <span class="hobby-tag">古典音乐</span>
+                         <span class="hobby-tag">演唱会</span>
+                     </div>
+                     <a href="javascript:void(0)" class="hobby-details" onclick="openEditPage('音乐')">查看详情 →</a>
+                 </div>
+             </div>
+             <div class="hobby-item">
+                 <div class="hobby-image">
+                     <img src="images/anime.jpg" alt="动漫" class="hobby-icon">
+                 </div>
+                 <div class="hobby-content">
+                     <h3 class="hobby-title">动漫</h3>
+                     <p class="hobby-description">我热衷于观看动漫，欣赏其独特的艺术风格和故事情节，也会参加相关的动漫活动和展会。</p>
+                     <div class="hobby-tags">
+                         <span class="hobby-tag">动漫周边</span>
+                     </div>
+                     <a href="javascript:void(0)" class="hobby-details" onclick="openEditPage('动漫')">查看详情 →</a>
+                 </div>
+             </div>
+             <div class="hobby-item">
+                 <div class="hobby-image">
+                     <img src="images/running.jpg" alt="跑步" class="hobby-icon">
+                 </div>
+                 <div class="hobby-content">
+                     <h3 class="hobby-title">跑步</h3>
+                     <p class="hobby-description">跑步是我保持身体健康的重要方式，通过跑步锻炼耐力和意志力，享受运动带来的愉悦感。</p>
+                     <div class="hobby-tags">
+                         <span class="hobby-tag">晨跑</span>
+                         <span class="hobby-tag">马拉松</span>
+                         <span class="hobby-tag">健康生活</span>
+                     </div>
+                     <a href="javascript:void(0)" class="hobby-details" onclick="openEditPage('跑步')">查看详情 →</a>
+                 </div>
+             </div>
+             <div class="hobby-item">
+                 <div class="hobby-image">
+                     <img src="images/camera.jpg" alt="摄影" class="hobby-icon">
+                 </div>
+                 <div class="hobby-content">
+                     <h3 class="hobby-title">摄影</h3>
+                     <p class="hobby-description">我喜欢用相机记录生活中的美好瞬间，通过摄影表达自己的视角和创意，捕捉边近的美景。</p>
+                     <div class="hobby-tags">
+                         <span class="hobby-tag">风景摄影</span>
+                         <span class="hobby-tag">人像摄影</span>
+                         <span class="hobby-tag">后期处理</span>
+                     </div>
+                     <a href="javascript:void(0)" class="hobby-details" onclick="openEditPage('摄影')">查看详情 →</a>
+                 </div>
+             </div>
+             <div class="hobby-item">
+                 <div class="hobby-image">
+                     <img src="images/finance.jpg" alt="理财" class="hobby-icon">
+                 </div>
+                 <div class="hobby-content">
+                     <h3 class="hobby-title">理财</h3>
+                     <p class="hobby-description">作为经济学专业的学生，我对理财有着浓厚兴趣，学习投资知识，合理规划个人财务。</p>
+                     <div class="hobby-tags">
+                         <span class="hobby-tag">投资策略</span>
+                         <span class="hobby-tag">财务规划</span>
+                         <span class="hobby-tag">经济学应用</span>
+                     </div>
+                     <a href="javascript:void(0)" class="hobby-details" onclick="openEditPage('理财')">查看详情 →</a>
+                 </div>
+             </div>
+         </div>
+     </section>
+    
+    <!-- 联系方式 -->
+    <section class="content-section" id="contact">
+        <div class="section-header">
+            <h2 class="section-title">CONTACT</h2>
+            <p class="section-subtitle">联系方式</p>
+        </div>
+        
+        <div class="contact-list">
+            <div class="contact-item">
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+                </svg>
+                <span>电话：18905605238</span>
+            </div>
+            
+            <div class="contact-item">
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+                <span>邮箱：1130715208@qq.com</span>
+            </div>
+            
+            <div class="contact-item">
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0V16h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548V16z"/>
+                </svg>
+                <span>微信：LYT06-2-7</span>
+            </div>
+            
+            <div class="contact-item">
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0V16h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548V16z"/>
+                </svg>
+                <span>QQ：1130715208</span>
+            </div>
+            
+            <div class="contact-item">
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+                <span>地址：湖北省武汉市洪山区</span>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 编辑模态框 -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">编辑兴趣爱好</h3>
+                <span class="close-modal">×</span>
+            </div>
+            <div class="modal-body">
+                <form id="hobbyForm">
+                    <div class="form-group">
+                        <label for="hobbyTitle">标题:</label>
+                        <input type="text" id="hobbyTitle" name="hobbyTitle" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="hobbyDescription">描述:</label>
+                        <textarea id="hobbyDescription" name="hobbyDescription" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="hobbyTags">标签 (用逗号分隔):</label>
+                        <input type="text" id="hobbyTags" name="hobbyTags">
+                    </div>
+                    <input type="hidden" id="currentHobby">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-cancel">取消</button>
+                <button type="button" class="btn-save">保存修改</button>
+            </div>
+        </div>
+    </div>
+    
+    <style>
+        /* 模态框样式 */
+        .modal {
+            display: none; /* 默认隐藏 */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4); /* 黑色半透明背景 */
+        }
+        
+        .modal-content {
+            background-color: #fefefe;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .modal-header h3 {
+            margin: 0;
+            color: #333;
+        }
+        
+        .close-modal {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .close-modal:hover,
+        .close-modal:focus {
+            color: black;
+            text-decoration: none;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        
+        .modal-footer {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+        
+        .btn-cancel,
+        .btn-save {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+        
+        .btn-cancel {
+            background-color: #f1f1f1;
+            color: #333;
+        }
+        
+        .btn-save {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        .btn-cancel:hover {
+            background-color: #ddd;
+        }
+        
+        .btn-save:hover {
+            background-color: #2980b9;
+        }
+    </style>
+    
+    <script>
+        // 滚动进度条
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("scrollProgress").style.width = scrolled + "%";
+        });
+        
+        // 获取模态框元素
+        const modal = document.getElementById('editModal');
+        const closeModalBtn = document.querySelector('.close-modal');
+        const cancelBtn = document.querySelector('.btn-cancel');
+        const saveBtn = document.querySelector('.btn-save');
+        
+        // 添加contains选择器支持
+        // 使用自定义方法名避免与原生contains冲突
+        Element.prototype.containsText = function(text) {
+            return this.textContent.includes(text);
+        };
+        
+        // 打开编辑页面函数
+        function openEditPage(hobbyName) {
+            // 设置模态框标题和当前爱好名称
+            document.getElementById('modalTitle').textContent = `编辑「${hobbyName}」`;
+            document.getElementById('currentHobby').value = hobbyName;
+            
+            // 根据当前爱好填充表单数据
+            // 使用querySelectorAll找到所有标题元素，然后过滤出包含对应文本的元素
+            const allTitles = document.querySelectorAll('.hobby-title');
+            let hobbyItem = null;
+            
+            for (let i = 0; i < allTitles.length; i++) {
+                if (allTitles[i].textContent.includes(hobbyName)) {
+                    hobbyItem = allTitles[i].closest('.hobby-item');
+                    break;
+                }
+            }
+            
+            if (hobbyItem) {
+                const title = hobbyItem.querySelector('.hobby-title').textContent;
+                const description = hobbyItem.querySelector('.hobby-description').textContent;
+                
+                // 收集所有标签并转为逗号分隔的字符串
+                const tagsElements = hobbyItem.querySelectorAll('.hobby-tag');
+                const tags = Array.from(tagsElements).map(tag => tag.textContent).join(', ');
+                
+                // 填充表单
+                document.getElementById('hobbyTitle').value = title;
+                document.getElementById('hobbyDescription').value = description;
+                document.getElementById('hobbyTags').value = tags;
+            }
+            
+            // 显示模态框
+            modal.style.display = 'block';
+            
+            // 阻止页面滚动
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // 保存编辑
+        function saveHobby() {
+            const hobbyName = document.getElementById('currentHobby').value;
+            const title = document.getElementById('hobbyTitle').value;
+            const description = document.getElementById('hobbyDescription').value;
+            const tagsStr = document.getElementById('hobbyTags').value;
+            
+            // 找到对应的爱好项
+            const allTitles = document.querySelectorAll('.hobby-title');
+            let hobbyItem = null;
+            
+            for (let i = 0; i < allTitles.length; i++) {
+                if (allTitles[i].textContent.includes(hobbyName)) {
+                    hobbyItem = allTitles[i].closest('.hobby-item');
+                    break;
+                }
+            }
+            
+            if (hobbyItem) {
+                // 更新标题和描述
+                hobbyItem.querySelector('.hobby-title').textContent = title;
+                hobbyItem.querySelector('.hobby-description').textContent = description;
+                
+                // 更新标签
+                const tagsContainer = hobbyItem.querySelector('.hobby-tags');
+                tagsContainer.innerHTML = ''; // 清空现有标签
+                
+                // 创建新标签
+                const tags = tagsStr.split(',').map(tag => tag.trim()).filter(tag => tag !== '');
+                tags.forEach(tag => {
+                    const tagElement = document.createElement('span');
+                    tagElement.className = 'hobby-tag';
+                    tagElement.textContent = tag;
+                    tagsContainer.appendChild(tagElement);
+                });
+                
+                // 保存到本地存储
+                const hobbyData = {
+                    title: title,
+                    description: description,
+                    tags: tags
+                };
+                localStorage.setItem(`hobby_${hobbyName}`, JSON.stringify(hobbyData));
+            }
+            
+            // 显示成功消息
+            showNotification('保存成功！');
+            closeModal();
+        }
+        
+        // 显示通知消息
+        function showNotification(message) {
+            // 检查是否已存在通知元素，不存在则创建
+            let notification = document.getElementById('notification');
+            if (!notification) {
+                notification = document.createElement('div');
+                notification.id = 'notification';
+                notification.style.position = 'fixed';
+                notification.style.bottom = '20px';
+                notification.style.right = '20px';
+                notification.style.backgroundColor = '#2ecc71';
+                notification.style.color = 'white';
+                notification.style.padding = '12px 20px';
+                notification.style.borderRadius = '4px';
+                notification.style.boxShadow = '0 2px 10px rgba(0,0,0,0.2)';
+                notification.style.zIndex = '1001';
+                notification.style.opacity = '0';
+                notification.style.transition = 'opacity 0.3s ease';
+                document.body.appendChild(notification);
+            }
+            
+            // 设置消息内容
+            notification.textContent = message;
+            
+            // 显示通知
+            notification.style.opacity = '1';
+            
+            // 3秒后自动隐藏
+            setTimeout(() => {
+                notification.style.opacity = '0';
+            }, 3000);
+        }
+        
+        // 页面加载时恢复保存的数据
+        window.addEventListener('load', function() {
+            // 尝试从本地存储恢复数据
+            const hobbies = ['养猫', '音乐', '动漫', '跑步', '摄影', '理财'];
+            
+            hobbies.forEach(hobbyName => {
+                const savedData = localStorage.getItem(`hobby_${hobbyName}`);
+                if (savedData) {
+                    try {
+                        const hobbyData = JSON.parse(savedData);
+                        
+                        // 找到对应的爱好项
+                        const allTitles = document.querySelectorAll('.hobby-title');
+                        let hobbyItem = null;
+                        
+                        for (let i = 0; i < allTitles.length; i++) {
+                            if (allTitles[i].textContent.includes(hobbyName)) {
+                                hobbyItem = allTitles[i].closest('.hobby-item');
+                                break;
+                            }
+                        }
+                        
+                        if (hobbyItem) {
+                            // 恢复标题和描述
+                            hobbyItem.querySelector('.hobby-title').textContent = hobbyData.title;
+                            hobbyItem.querySelector('.hobby-description').textContent = hobbyData.description;
+                            
+                            // 恢复标签
+                            const tagsContainer = hobbyItem.querySelector('.hobby-tags');
+                            tagsContainer.innerHTML = '';
+                            
+                            hobbyData.tags.forEach(tag => {
+                                const tagElement = document.createElement('span');
+                                tagElement.className = 'hobby-tag';
+                                tagElement.textContent = tag;
+                                tagsContainer.appendChild(tagElement);
+                            });
+                        }
+                    } catch (e) {
+                        console.error('恢复数据失败:', e);
+                    }
+                }
+            });
+        });
+        
+        // 关闭模态框
+        function closeModal() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // 恢复页面滚动
+        }
+        
+        // 点击关闭按钮关闭模态框
+        closeModalBtn.onclick = closeModal;
+        cancelBtn.onclick = closeModal;
+        
+        // 保存按钮点击事件
+        saveBtn.onclick = saveHobby;
+        
+        // 点击模态框外部关闭模态框
+        window.onclick = function(event) {
+            if (event.target === modal) {
+                closeModal();
+            }
+        };
+        
+        // 按ESC键关闭模态框
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && modal.style.display === 'block') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>

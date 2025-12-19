@@ -1,0 +1,23 @@
+<svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景圆 -->
+  <circle cx="24" cy="24" r="20" fill="#f8f9fa" stroke="#e0e0e0" stroke-width="1"/>
+  
+  <!-- 锅的轮廓 --<path d="M14,30 C14,26 18,24 24,24 C30,24 34,26 34,30 L34,34 C34,36 32,38 30,38 L18,38 C16,38 14,36 14,34 L14,30 Z" fill="#757575" stroke="#424242" stroke-width="1.5"/>
+  
+  <!-- 锅的把手 --<path d="M34,32 C36,32 38,33 38,35 C38,37 36,38 34,38" fill="none" stroke="#424242" stroke-width="1.5" stroke-linecap="round"/>
+  
+  <!-- 蒸汽 --<path d="M20,24 C19,20 21,18 22,16" fill="none" stroke="#9E9E9E" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M24,24 C23,21 25,19 26,17" fill="none" stroke="#9E9E9E" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M28,24 C27,20 29,18 30,16" fill="none" stroke="#9E9E9E" stroke-width="1.5" stroke-linecap="round"/>
+  
+  <!-- 火焰 --<path d="M24,38 L21,44 L24,42 L27,44 Z" fill="#FF5722" stroke="#E64A19" stroke-width="1"/>
+  <path d="M23,41 L22,43 L24,42 L26,43 L25,41" fill="#FFC107" stroke="#FFA000" stroke-width="1"/>
+  
+  <!-- 食物（碗里的汤或食物） --<path d="M18,32 Q24,30 30,32" fill="none" stroke="#FFCC80" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M20,33 Q24,31 28,33" fill="none" stroke="#FFA726" stroke-width="1.5" stroke-linecap="round"/>
+  
+  <!-- 装饰元素 - 胡椒 --<path d="M10,10 C12,8 16,8 18,10 C20,12 20,16 18,18 C16,20 12,20 10,18 C8,16 8,12 10,10 Z" fill="#795548" transform="scale(0.5) translate(20, 10)"/>
+  
+  <!-- 装饰元素 - 盐瓶 --<path d="M14,12 L14,18 L16,18 L16,12 Z" fill="#B0BEC5" transform="scale(0.5) translate(80, 15)"/>
+  <path d="M13.5,12 L16.5,12 L16,10 L14,10 Z" fill="#B0BEC5" transform="scale(0.5) translate(80, 15)"/>
+</svg>
